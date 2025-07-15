@@ -30,7 +30,7 @@ export function BookRetailers() {
               className="bg-[#3E6764] hover:bg-[#33534F] text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
             >
               <a
-                href="https://www.amazon.com/Deep-Learning-Banking-Intelligence-Next-Generation/dp/1394295375/ref=sr_1_1?crid=1NZKZBQYR3O5C&dib=eyJ2IjoiMSJ9.qmls9ZIByTuO-jblIwMKHg.-fgZ5-9uWmIQsskl0EARKOPXUGYAnog1WjbDAsRkj9o&dib_tag=se&keywords=9781394295371&qid=1747761655&sprefix=9781394295371%2Caps%2C67&sr=8-1"
+                href="https://mybook.to/DeepLearnBank"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"

@@ -7,16 +7,21 @@ import Link from "next/link"
 
 function RiskChart() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+
     const ctx = canvas.getContext("2d")
     if (!ctx) return
+
     canvas.width = 300
     canvas.height = 200
+
     let frame = 0
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
+
       // Draw animated risk score chart
       ctx.strokeStyle = "#10b981"
       ctx.lineWidth = 2
@@ -27,6 +32,7 @@ function RiskChart() {
         else ctx.lineTo(x, y)
       }
       ctx.stroke()
+
       // Draw glowing dots
       for (let i = 0; i < 5; i++) {
         const x = i * 60 + 30
@@ -39,27 +45,36 @@ function RiskChart() {
         ctx.fill()
         ctx.shadowBlur = 0
       }
+
       frame += 2
       requestAnimationFrame(animate)
     }
+
     animate()
   }, [])
+
   return <canvas ref={canvasRef} className="w-full h-full opacity-80" />
 }
 
 function FraudMatrix() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+
     const ctx = canvas.getContext("2d")
     if (!ctx) return
+
     canvas.width = 300
     canvas.height = 200
+
     let frame = 0
     const gridSize = 20
+
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
+
       // Draw matrix grid
       for (let x = 0; x < canvas.width; x += gridSize) {
         for (let y = 0; y < canvas.height; y += gridSize) {
@@ -72,30 +87,38 @@ function FraudMatrix() {
           ctx.fillRect(x, y, gridSize - 2, gridSize - 2)
         }
       }
+
       frame += 1
       requestAnimationFrame(animate)
     }
+
     animate()
   }, [])
+
   return <canvas ref={canvasRef} className="w-full h-full opacity-80" />
 }
 
 function DeepLearningForecast() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+
     const ctx = canvas.getContext("2d")
     if (!ctx) return
+
     canvas.width = 300
     canvas.height = 200
+
     let frame = 0
+
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       ctx.lineWidth = 2
 
       // Historical data (solid line)
-      ctx.strokeStyle = "#10b981" 
+      ctx.strokeStyle = "#10b981"
       ctx.beginPath()
       for (let x = 0; x < canvas.width * 0.6; x += 5) {
         const y = 100 + Math.sin((x + frame) * 0.03) * 20
@@ -105,7 +128,7 @@ function DeepLearningForecast() {
       ctx.stroke()
 
       // Forecasted data (dashed line)
-      ctx.strokeStyle = "#22d3ee" 
+      ctx.strokeStyle = "#22d3ee"
       ctx.setLineDash([5, 5])
       ctx.beginPath()
       const lastX = canvas.width * 0.6 - 5
@@ -136,20 +159,26 @@ function DeepLearningForecast() {
       frame += 1
       requestAnimationFrame(animate)
     }
+
     animate()
   }, [])
+
   return <canvas ref={canvasRef} className="w-full h-full opacity-80" />
 }
 
 function NlpDocumentIntel() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+
     const ctx = canvas.getContext("2d")
     if (!ctx) return
+
     canvas.width = 300
     canvas.height = 200
+
     let frame = 0
     const keywords = ["Loan", "Risk", "Default", "Credit", "Score"]
     const docRects = [
@@ -174,6 +203,7 @@ function NlpDocumentIntel() {
       const centerX = canvas.width / 2 + 50
       const centerY = canvas.height / 2
       const radius = 70
+
       ctx.font = "12px Arial"
       ctx.textAlign = "center"
       ctx.textBaseline = "middle"
@@ -199,6 +229,7 @@ function NlpDocumentIntel() {
         ctx.beginPath()
         ctx.arc(x, y, 15, 0, Math.PI * 2)
         ctx.fill()
+
         ctx.fillStyle = "white"
         ctx.fillText(keyword, x, y)
       })
@@ -206,14 +237,16 @@ function NlpDocumentIntel() {
       frame += 1
       requestAnimationFrame(animate)
     }
+
     animate()
   }, [])
+
   return (
     <div className="w-full h-full flex items-center justify-center">
       <canvas
         ref={canvasRef}
         className="opacity-80"
-        style={{ width: '100%', height: 'auto', maxHeight: '100%', aspectRatio: '3/2' }}
+        style={{ width: "100%", height: "auto", maxHeight: "100%", aspectRatio: "3/2" }}
       />
     </div>
   )
@@ -221,13 +254,17 @@ function NlpDocumentIntel() {
 
 function GnnLoanRelationships() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+
     const ctx = canvas.getContext("2d")
     if (!ctx) return
+
     canvas.width = 300
     canvas.height = 200
+
     const nodes = [
       { x: 50, y: 50 },
       { x: 250, y: 50 },
@@ -235,6 +272,7 @@ function GnnLoanRelationships() {
       { x: 50, y: 150 },
       { x: 250, y: 150 },
     ]
+
     const edges = [
       [0, 1],
       [0, 2],
@@ -243,9 +281,12 @@ function GnnLoanRelationships() {
       [2, 4],
       [3, 4],
     ]
+
     let frame = 0
+
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
+
       // Draw edges
       ctx.lineWidth = 1
       for (const [n1, n2] of edges) {
@@ -256,6 +297,7 @@ function GnnLoanRelationships() {
         ctx.lineTo(nodes[n2].x, nodes[n2].y)
         ctx.stroke()
       }
+
       // Draw nodes
       for (let i = 0; i < nodes.length; i++) {
         const node = nodes[i]
@@ -265,17 +307,20 @@ function GnnLoanRelationships() {
         ctx.arc(node.x, node.y, pulse, 0, Math.PI * 2)
         ctx.fill()
       }
+
       frame += 1
       requestAnimationFrame(animate)
     }
+
     animate()
   }, [])
+
   return (
     <div className="w-full h-full flex items-center justify-center">
       <canvas
         ref={canvasRef}
         className="opacity-80"
-        style={{ width: '100%', height: 'auto', maxHeight: '100%', aspectRatio: '3/2' }}
+        style={{ width: "100%", height: "auto", maxHeight: "100%", aspectRatio: "3/2" }}
       />
     </div>
   )
@@ -283,20 +328,25 @@ function GnnLoanRelationships() {
 
 function LlamaPromptEng() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+
     const ctx = canvas.getContext("2d")
     if (!ctx) return
+
     canvas.width = 300
     canvas.height = 200
+
     let frame = 0
     const promptText = "Analyze financial reports for key insights."
-    const typingSpeed = 2 
+    const typingSpeed = 2
     const cursorBlinkSpeed = 30
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
+
       ctx.font = "16px monospace"
       ctx.textAlign = "left"
       ctx.textBaseline = "top"
@@ -313,8 +363,8 @@ function LlamaPromptEng() {
       if (typedLength < promptText.length) {
         if (Math.floor(frame / cursorBlinkSpeed) % 2 === 0) {
           const textWidth = ctx.measureText(currentText).width
-          ctx.fillStyle = "#a0aec0" 
-          ctx.fillRect(20 + textWidth, 80, 2, 16) 
+          ctx.fillStyle = "#a0aec0"
+          ctx.fillRect(20 + textWidth, 80, 2, 16)
         }
       } else {
         // Reset animation after a delay
@@ -326,91 +376,162 @@ function LlamaPromptEng() {
       frame += 1
       requestAnimationFrame(animate)
     }
+
     animate()
   }, [])
+
   return <canvas ref={canvasRef} className="w-full h-full opacity-80" />
 }
 
 function MultimodalIntegration() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+
     const ctx = canvas.getContext("2d")
     if (!ctx) return
+
     canvas.width = 300
     canvas.height = 200
+
     let frame = 0
-
-    const dataSources = [
-      { type: "text", color: "#a0aec0", icon: "T", startX: 20, startY: 20 },
-      { type: "image", color: "#ef4444", icon: "🖼️", startX: 280, startY: 20 },
-      { type: "time-series", color: "#10b981", icon: "📈", startX: 20, startY: 180 },
-      { type: "tabular", color: "#22d3ee", icon: "📊", startX: 280, startY: 180 },
-    ]
-
     const centerX = canvas.width / 2
     const centerY = canvas.height / 2
+
+    // Define data stream sources from different corners
+    const streams = [
+      { startX: 0, startY: 0, color: "#10b981", name: "structured" },
+      { startX: canvas.width, startY: 0, color: "#22d3ee", name: "visual" },
+      { startX: 0, startY: canvas.height, color: "#a855f7", name: "temporal" },
+      { startX: canvas.width, startY: canvas.height, color: "#f59e0b", name: "textual" },
+    ]
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      // Draw central processing unit
-      ctx.fillStyle = `rgba(255, 255, 255, ${0.1 + Math.abs(Math.sin(frame * 0.05)) * 0.2})`
+      // Draw central fusion point with pulsing effect
+      const pulseRadius = 25 + Math.sin(frame * 0.08) * 8
+      const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, pulseRadius)
+      gradient.addColorStop(0, "rgba(255, 255, 255, 0.3)")
+      gradient.addColorStop(0.7, "rgba(255, 255, 255, 0.1)")
+      gradient.addColorStop(1, "rgba(255, 255, 255, 0)")
+
+      ctx.fillStyle = gradient
       ctx.beginPath()
-      ctx.arc(centerX, centerY, 30, 0, Math.PI * 2)
+      ctx.arc(centerX, centerY, pulseRadius, 0, Math.PI * 2)
       ctx.fill()
-      ctx.strokeStyle = "rgba(255, 255, 255, 0.5)"
-      ctx.lineWidth = 1
-      ctx.stroke()
 
-      dataSources.forEach((source, i) => {
-        const progress = Math.min(1, (frame - i * 10) * 0.02) // Staggered arrival
-        if (progress < 0) return
+      // Draw flowing streams from each corner
+      streams.forEach((stream, streamIndex) => {
+        const streamOffset = frame * 0.02 + (streamIndex * Math.PI) / 2
 
-        const currentX = source.startX + (centerX - source.startX) * progress
-        const currentY = source.startY + (centerY - source.startY) * progress
+        // Create flowing particles along the stream path
+        for (let i = 0; i < 8; i++) {
+          const progress = (i / 8 + streamOffset) % 1
+          const x = stream.startX + (centerX - stream.startX) * progress
+          const y = stream.startY + (centerY - stream.startY) * progress
 
-        // Draw data particle
-        ctx.fillStyle = source.color
+          // Add wave motion to the path
+          const waveOffset = Math.sin(progress * Math.PI * 3 + frame * 0.1) * 15
+          const perpX =
+            -(stream.startY - centerY) / Math.sqrt((stream.startX - centerX) ** 2 + (stream.startY - centerY) ** 2)
+          const perpY =
+            (stream.startX - centerX) / Math.sqrt((stream.startX - centerY) ** 2 + (stream.startY - centerY) ** 2)
+
+          const finalX = x + perpX * waveOffset
+          const finalY = y + perpY * waveOffset
+
+          // Particle size decreases as it approaches center
+          const size = 3 * (1 - progress * 0.7)
+          const alpha = 0.8 * (1 - progress * 0.3)
+
+          // Draw particle with glow effect
+          ctx.shadowColor = stream.color
+          ctx.shadowBlur = 8
+          ctx.fillStyle =
+            stream.color +
+            Math.floor(alpha * 255)
+              .toString(16)
+              .padStart(2, "0")
+          ctx.beginPath()
+          ctx.arc(finalX, finalY, size, 0, Math.PI * 2)
+          ctx.fill()
+          ctx.shadowBlur = 0
+        }
+
+        // Draw smooth gradient trail
+        const trailGradient = ctx.createLinearGradient(stream.startX, stream.startY, centerX, centerY)
+        trailGradient.addColorStop(0, stream.color + "40")
+        trailGradient.addColorStop(0.8, stream.color + "20")
+        trailGradient.addColorStop(1, stream.color + "00")
+
+        ctx.strokeStyle = trailGradient
+        ctx.lineWidth = 2
         ctx.beginPath()
-        ctx.arc(currentX, currentY, 6, 0, Math.PI * 2)
-        ctx.fill()
+        ctx.moveTo(stream.startX, stream.startY)
 
-        // Draw trail
-        ctx.strokeStyle = source.color
-        ctx.lineWidth = 1
-        ctx.beginPath()
-        ctx.moveTo(source.startX, source.startY)
-        ctx.lineTo(currentX, currentY)
+        // Create curved path instead of straight line
+        const controlX = stream.startX + (centerX - stream.startX) * 0.3
+        const controlY = stream.startY + (centerY - stream.startY) * 0.3
+        ctx.quadraticCurveTo(controlX, controlY, centerX, centerY)
         ctx.stroke()
-
-        // Draw icon at source
-        ctx.font = "16px Arial"
-        ctx.textAlign = "center"
-        ctx.textBaseline = "middle"
-        ctx.fillStyle = source.color
-        ctx.fillText(source.icon, source.startX, source.startY)
       })
 
-      frame += 1
+      // Draw neural network-like connections in the center
+      const connectionRadius = 40
+      for (let i = 0; i < 6; i++) {
+        const angle = (i / 6) * Math.PI * 2 + frame * 0.03
+        const x = centerX + Math.cos(angle) * connectionRadius
+        const y = centerY + Math.sin(angle) * connectionRadius
+
+        const nodeAlpha = 0.4 + Math.sin(frame * 0.05 + i) * 0.3
+        ctx.fillStyle = `rgba(255, 255, 255, ${nodeAlpha})`
+        ctx.beginPath()
+        ctx.arc(x, y, 2, 0, Math.PI * 2)
+        ctx.fill()
+
+        // Connect nodes with thin lines
+        if (i > 0) {
+          const prevAngle = ((i - 1) / 6) * Math.PI * 2 + frame * 0.03
+          const prevX = centerX + Math.cos(prevAngle) * connectionRadius
+          const prevY = centerY + Math.sin(prevAngle) * connectionRadius
+
+          ctx.strokeStyle = `rgba(255, 255, 255, 0.2)`
+          ctx.lineWidth = 1
+          ctx.beginPath()
+          ctx.moveTo(prevX, prevY)
+          ctx.lineTo(x, y)
+          ctx.stroke()
+        }
+      }
+
+      frame += 0.5
       requestAnimationFrame(animate)
     }
+
     animate()
   }, [])
+
   return <canvas ref={canvasRef} className="w-full h-full opacity-80" />
 }
 
 function EthicalAiModels() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
+
     const ctx = canvas.getContext("2d")
     if (!ctx) return
+
     canvas.width = 300
     canvas.height = 200
+
     let frame = 0
+
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
@@ -426,10 +547,12 @@ function EthicalAiModels() {
       ctx.moveTo(70 + balanceOffset, 100)
       ctx.lineTo(130 + balanceOffset, 100)
       ctx.stroke()
+
       ctx.fillStyle = "#10b981"
       ctx.beginPath()
       ctx.arc(70 + balanceOffset, 100, 8, 0, Math.PI * 2)
       ctx.fill()
+
       ctx.fillStyle = "#ef4444"
       ctx.beginPath()
       ctx.arc(130 + balanceOffset, 100, 8, 0, Math.PI * 2)
@@ -448,8 +571,10 @@ function EthicalAiModels() {
       frame += 1
       requestAnimationFrame(animate)
     }
+
     animate()
   }, [])
+
   return <canvas ref={canvasRef} className="w-full h-full opacity-80" />
 }
 
@@ -479,6 +604,11 @@ const visualizations = [
     description: "Exploring relationships in loan data with graph neural networks.",
     type: "gnn-loan-relationships",
   },
+  {
+    title: "Multimodal Learning",
+    description: "Integrating text, image, and numerical data for comprehensive analysis.",
+    type: "multimodal-integration",
+  },
 ]
 
 export function CodeSection() {
@@ -489,10 +619,6 @@ export function CodeSection() {
     switch (type) {
       case "risk-chart":
         return <RiskChart />
-      // case "trading-flow":
-      //   return <TradingFlow />
-      // case "fraud-matrix":
-      //   return <CnnRiskViz />
       case "cnn-risk-viz":
         return <FraudMatrix />
       case "deep-learning-forecast":
@@ -501,6 +627,8 @@ export function CodeSection() {
         return <NlpDocumentIntel />
       case "gnn-loan-relationships":
         return <GnnLoanRelationships />
+      case "multimodal-integration":
+        return <MultimodalIntegration />
       default:
         return <RiskChart />
     }
@@ -516,11 +644,10 @@ export function CodeSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-white bg-clip-text text-transparent">
-              AI in Motion
-            </span>
+            <span className="text-white bg-clip-text text-transparent">AI in Motion</span>
           </h2>
         </motion.div>
+
         <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {visualizations.map((viz, index) => (
             <Link href="/labs" key={index} passHref legacyBehavior>
