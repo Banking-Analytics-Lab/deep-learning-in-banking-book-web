@@ -36,6 +36,9 @@ export function Footer() {
             Wiley
           </Link>
         </nav>
+        <div className="mb-4">
+          <span className="text-sm">Contact: <a href="mailto:contact@bankingbook.ml" className="text-[#4B90A0] hover:underline">contact@bankingbook.ml</a></span>
+        </div>
         <p className="text-xs">&copy; 2025 Deep Learning in Banking. All rights reserved.</p>
       </div>
     </motion.footer>
