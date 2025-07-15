@@ -1,0 +1,98 @@
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
+import { ShoppingCart, BookOpen, Store, Building2 } from "lucide-react"
+
+export function BookRetailers() {
+  return (
+    <section className="relative w-full py-16 md:py-24 bg-slate-950 text-white overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 z-0" />
+      <div className="relative z-10 container mx-auto px-4 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-3xl md:text-4xl font-bold mb-8 text-cyan-400"
+        >
+          Get Your Copy Today
+        </motion.h2>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto"
+        >
+          <motion.div whileHover={{ scale: 1.08, rotate: 2 }} whileTap={{ scale: 0.98 }}>
+            <Button
+              asChild
+              size="lg"
+              className="bg-teal-700 hover:bg-teal-800 text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
+            >
+              <a
+                href="https://www.amazon.com/Deep-Learning-Banking-Intelligence-Next-Generation/dp/1394295375/ref=sr_1_1?crid=1NZKZBQYR3O5C&dib=eyJ2IjoiMSJ9.qmls9ZIByTuO-jblIwMKHg.-fgZ5-9uWmIQsskl0EARKOPXUGYAnog1WjbDAsRkj9o&dib_tag=se&keywords=9781394295371&qid=1747761655&sprefix=9781394295371%2Caps%2C67&sr=8-1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <ShoppingCart className="transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
+                Amazon
+              </a>
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.08, rotate: -2 }} whileTap={{ scale: 0.98 }}>
+            <Button
+              asChild
+              size="lg"
+              className="bg-indigo-900 hover:bg-indigo-950 text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
+            >
+              <a
+                href="https://www.barnesandnoble.com/w/deep-learning-in-banking-cristian-bravo/1147563948?ean=9781394295371"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <BookOpen className="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
+                Barnes & Noble
+              </a>
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.08, rotate: 2 }} whileTap={{ scale: 0.98 }}>
+            <Button
+              asChild
+              size="lg"
+              className="bg-green-800 hover:bg-green-900 text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
+            >
+              <a
+                href="https://bookshop.org/p/books/deep-learning-in-banking-leveraging-artificial-intelligence-for-next-generation-financial-services-cristian-bravo/22669711?ean=9781394295371&next=t&next=t"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Store className="transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
+                Bookshop.org
+              </a>
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.08, rotate: -2 }} whileTap={{ scale: 0.98 }}>
+            <Button
+              asChild
+              size="lg"
+              className="bg-[#88BFCA] hover:bg-[#6da3b1] text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
+            >
+              <a
+                href="https://www.porchlightbooks.com/products/deep-learning-in-banking-cristian-bravo-9781394295371"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Building2 className="transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6" />
+                Porchlight
+              </a>
+            </Button>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
