@@ -12,7 +12,7 @@ export function AboutBookSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-3xl md:text-4xl font-bold text-center mb-12 text-cyan-400"
+          className="text-3xl md:text-4xl font-bold text-center mb-12 text-white"
         >
           About Deep Learning in Banking
         </motion.h2>
@@ -22,6 +22,7 @@ export function AboutBookSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
+            style={{ color: '#BDDBD8' }}
           >
             Deep Learning in Banking is a comprehensive resource at the intersection of artificial intelligence and
             financial services, combining academic depth with practical insight to address the real-world complexities
@@ -34,7 +35,7 @@ export function AboutBookSection() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex items-start gap-4"
           >
-            <Cpu className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+            <Cpu className="w-8 h-8 flex-shrink-0 mt-1" style={{ color: '#44937B' }} />
             <p>
               The book explores advanced machine learning techniques, including convolutional neural networks, graph
               neural networks, transformers, and large language models, providing a deep dive into their application
@@ -48,7 +49,7 @@ export function AboutBookSection() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="flex items-start gap-4"
           >
-            <ShieldCheck className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+            <ShieldCheck className="w-8 h-8 flex-shrink-0 mt-1" style={{ color: '#44937B' }} />
             <p>
               It also examines critical themes such as fairness, regulatory compliance, explainability, and trust. These
               considerations are central to developing responsible AI systems that meet the unique demands of the
@@ -62,7 +63,7 @@ export function AboutBookSection() {
             transition={{ duration: 0.6, delay: 1.0 }}
             className="flex items-start gap-4"
           >
-            <Code className="w-8 h-8 text-primary flex-shrink-0 mt-1" />
+            <Code className="w-8 h-8 flex-shrink-0 mt-1" style={{ color: '#44937B' }} />
             <p>
               Designed for academics, practitioners, regulators, and graduate students alike, the book integrates
               real-world case studies drawn from financial applications with hands-on labs and open-source code to

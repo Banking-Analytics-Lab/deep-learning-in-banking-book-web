@@ -2,7 +2,7 @@
 
 ![Book Cover](public/book2.png)
 
-**Leveraging Artificial Intelligence for Next-Generation Financial Services**
+**Integrating Artificial Intelligence for Next-Generation Financial Services**
 
 By Cristián Bravo, Sebastián Maldonado, and María Óskarsdóttir
 

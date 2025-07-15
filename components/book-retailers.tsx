@@ -13,7 +13,7 @@ export function BookRetailers() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-3xl md:text-4xl font-bold mb-8 text-cyan-400"
+          className="text-3xl md:text-4xl font-bold mb-8 text-white"
         >
           Get Your Copy Today
         </motion.h2>
@@ -27,7 +27,7 @@ export function BookRetailers() {
             <Button
               asChild
               size="lg"
-              className="bg-teal-700 hover:bg-teal-800 text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
+              className="bg-[#3E6764] hover:bg-[#33534F] text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
             >
               <a
                 href="https://www.amazon.com/Deep-Learning-Banking-Intelligence-Next-Generation/dp/1394295375/ref=sr_1_1?crid=1NZKZBQYR3O5C&dib=eyJ2IjoiMSJ9.qmls9ZIByTuO-jblIwMKHg.-fgZ5-9uWmIQsskl0EARKOPXUGYAnog1WjbDAsRkj9o&dib_tag=se&keywords=9781394295371&qid=1747761655&sprefix=9781394295371%2Caps%2C67&sr=8-1"
@@ -44,7 +44,7 @@ export function BookRetailers() {
             <Button
               asChild
               size="lg"
-              className="bg-indigo-900 hover:bg-indigo-950 text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
+              className="bg-[#BDDBD8] hover:bg-[#A2C2BC] text-[#3E6764] px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
             >
               <a
                 href="https://www.barnesandnoble.com/w/deep-learning-in-banking-cristian-bravo/1147563948?ean=9781394295371"
@@ -61,7 +61,7 @@ export function BookRetailers() {
             <Button
               asChild
               size="lg"
-              className="bg-green-800 hover:bg-green-900 text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
+              className="bg-[#4B90A0] hover:bg-[#397282] text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
             >
               <a
                 href="https://bookshop.org/p/books/deep-learning-in-banking-leveraging-artificial-intelligence-for-next-generation-financial-services-cristian-bravo/22669711?ean=9781394295371&next=t&next=t"
@@ -78,7 +78,7 @@ export function BookRetailers() {
             <Button
               asChild
               size="lg"
-              className="bg-[#88BFCA] hover:bg-[#6da3b1] text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
+              className="bg-[#44937B] hover:bg-[#35725F] text-white px-6 py-4 rounded-lg font-semibold shadow transition-transform duration-200 group"
             >
               <a
                 href="https://www.porchlightbooks.com/products/deep-learning-in-banking-cristian-bravo-9781394295371"

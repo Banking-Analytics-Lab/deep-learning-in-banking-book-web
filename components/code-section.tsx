@@ -47,49 +47,6 @@ function RiskChart() {
   return <canvas ref={canvasRef} className="w-full h-full opacity-80" />
 }
 
-function TradingFlow() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-    canvas.width = 300
-    canvas.height = 200
-    const particles: Array<{ x: number; y: number; vx: number; vy: number; life: number }> = []
-    const animate = () => {
-      ctx.fillStyle = "rgba(15, 23, 42, 0.1)"
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
-      // Add new particles
-      if (Math.random() < 0.3) {
-        particles.push({
-          x: 0,
-          y: Math.random() * canvas.height,
-          vx: 2 + Math.random() * 2,
-          vy: (Math.random() - 0.5) * 2,
-          life: 1,
-        })
-      }
-      // Update and draw particles
-      for (let i = particles.length - 1; i >= 0; i--) {
-        const p = particles[i]
-        p.x += p.vx
-        p.y += p.vy
-        p.life -= 0.01
-        if (p.life <= 0 || p.x > canvas.width) {
-          particles.splice(i, 1)
-          continue
-        }
-        ctx.fillStyle = `rgba(34, 211, 238, ${p.life * 0.8})`
-        ctx.fillRect(p.x, p.y, 2, 2)
-      }
-      requestAnimationFrame(animate)
-    }
-    animate()
-  }, [])
-  return <canvas ref={canvasRef} className="w-full h-full opacity-80" />
-}
-
 function FraudMatrix() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   useEffect(() => {
@@ -121,76 +78,6 @@ function FraudMatrix() {
     animate()
   }, [])
   return <canvas ref={canvasRef} className="w-full h-full opacity-80" />
-}
-
-function CnnRiskViz() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-    canvas.width = 300
-    canvas.height = 200
-
-    const layers = [
-      { x: 50, nodes: 8 }, // Input
-      { x: 120, nodes: 6 }, // Conv
-      { x: 190, nodes: 4 }, // Hidden
-      { x: 260, nodes: 2 }, // Output
-    ]
-    const nodeRadius = 4
-    let frame = 0
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-      // Draw connections
-      ctx.lineWidth = 0.5
-      for (let i = 0; i < layers.length - 1; i++) {
-        const currentLayer = layers[i]
-        const nextLayer = layers[i + 1]
-        for (let j = 0; j < currentLayer.nodes; j++) {
-          for (let k = 0; k < nextLayer.nodes; k++) {
-            const y1 = canvas.height / 2 - (currentLayer.nodes / 2 - j - 0.5) * 20
-            const y2 = canvas.height / 2 - (nextLayer.nodes / 2 - k - 0.5) * 20
-            const activation = Math.sin((frame * 0.05 + j * 0.1 + k * 0.1) * 0.5) * 0.5 + 0.5
-            ctx.strokeStyle = `rgba(34, 211, 238, ${activation * 0.7})` // Cyan for connections
-            ctx.beginPath()
-            ctx.moveTo(currentLayer.x, y1)
-            ctx.lineTo(nextLayer.x, y2)
-            ctx.stroke()
-          }
-        }
-      }
-
-      // Draw nodes
-      for (let i = 0; i < layers.length; i++) {
-        const layer = layers[i]
-        for (let j = 0; j < layer.nodes; j++) {
-          const y = canvas.height / 2 - (layer.nodes / 2 - j - 0.5) * 20
-          const pulse = Math.sin((frame * 0.1 + j * 0.2) * 0.5) * 0.5 + 0.5
-          ctx.fillStyle = `rgba(16, 185, 129, ${pulse * 0.8})` // Green for nodes
-          ctx.beginPath()
-          ctx.arc(layer.x, y, nodeRadius, 0, Math.PI * 2)
-          ctx.fill()
-        }
-      }
-
-      frame += 1
-      requestAnimationFrame(animate)
-    }
-    animate()
-  }, [])
-  return (
-    <div className="w-full h-full flex items-center justify-center">
-      <canvas
-        ref={canvasRef}
-        className="opacity-80"
-        style={{ width: '100%', height: 'auto', maxHeight: '100%', aspectRatio: '3/2' }}
-      />
-    </div>
-  )
 }
 
 function DeepLearningForecast() {
@@ -573,16 +460,6 @@ const visualizations = [
     type: "risk-chart",
   },
   {
-    title: "AI-Powered Trading Flows",
-    description: "Live algorithmic trading decision streams and market analysis",
-    type: "trading-flow",
-  },
-  {
-    title: "Fraud Detection Matrix",
-    description: "Interactive anomaly detection with real-time transaction monitoring",
-    type: "fraud-matrix",
-  },
-  {
     title: "Image-Based Risk Modeling",
     description: "Visualizing spatial data for credit risk using neural networks.",
     type: "cnn-risk-viz",
@@ -612,12 +489,12 @@ export function CodeSection() {
     switch (type) {
       case "risk-chart":
         return <RiskChart />
-      case "trading-flow":
-        return <TradingFlow />
-      case "fraud-matrix":
-        return <FraudMatrix />
+      // case "trading-flow":
+      //   return <TradingFlow />
+      // case "fraud-matrix":
+      //   return <CnnRiskViz />
       case "cnn-risk-viz":
-        return <CnnRiskViz />
+        return <FraudMatrix />
       case "deep-learning-forecast":
         return <DeepLearningForecast />
       case "nlp-document-intel":
@@ -639,7 +516,7 @@ export function CodeSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="text-white bg-clip-text text-transparent">
               AI in Motion
             </span>
           </h2>
@@ -664,7 +541,7 @@ export function CodeSection() {
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-cyan-500/10" />
                     {getVisualization(viz.type)}
                   </div>
-                  <h3 className="text-lg font-semibold text-cyan-400 mb-2 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-lg font-semibold text-[#44937B] mb-2 group-hover:text-[#44937B] transition-colors">
                     {viz.title}
                   </h3>
                   <p className="text-sm text-slate-400 leading-relaxed">{viz.description}</p>

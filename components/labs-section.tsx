@@ -78,7 +78,7 @@ export function LabsSection() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-400 via-[#BDDBD8] to-blue-400 bg-clip-text text-transparent">
               Hands-On Labs
             </span>
           </h2>
@@ -98,11 +98,11 @@ export function LabsSection() {
                 onClick={() => setSelectedTopic(topic)}
                 className={`${
                   selectedTopic === topic
-                    ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white border-0"
-                    : "border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 bg-transparent"
+                    ? "bg-gradient-to-r from-emerald-500 to-[#BDDBD8] text-white border-0"
+                    : "border-[#BDDBD8]/30 text-[#BDDBD8] hover:bg-[#BDDBD8]/10 bg-transparent"
                 } transition-all duration-300`}
               >
-                <Filter className="mr-2 h-3 w-3" />
+                <Filter className="mr-2 h-3 w-3" style={{ color: '#BDDBD8' }} />
                 {topic}
               </Button>
             ))}
@@ -128,23 +128,23 @@ export function LabsSection() {
               className="group"
             >
               <Card
-                className={`bg-gradient-to-br ${getColorClasses(lab.color)} backdrop-blur-md border transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/10 h-full`}
+                className={`bg-gradient-to-br from-emerald-500/20 to-[#BDDBD8]/20 border-emerald-500/30 hover:border-[#BDDBD8]/50 backdrop-blur-md border transition-all duration-500 hover:shadow-2xl hover:shadow-[#BDDBD8]/10 h-full`}
               >
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-4">
                     <div>
-                      <div className="text-sm text-cyan-400 font-medium mb-1">{lab.chapter}</div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">
+                      <div className="text-sm font-medium mb-1" style={{ color: '#BDDBD8' }} >{lab.chapter}</div>
+                      <h3 className="text-xl font-bold text-white group-hover:text-[#BDDBD8] transition-colors duration-300">
                         {lab.title}
                       </h3>
                     </div>
-                    <motion.div whileHover={{ rotate: 180 }} transition={{ duration: 0.3 }} className="text-cyan-400">
+                    <motion.div whileHover={{ rotate: 180 }} transition={{ duration: 0.3 }} style={{ color: '#BDDBD8' }}>
                       <Zap className="h-5 w-5" />
                     </motion.div>
                   </div>
 
                   <div className="flex gap-2 mb-4">
-                    <span className="px-2 py-1 text-xs bg-slate-800/50 text-cyan-300 rounded-full">{lab.topic}</span>
+                    <span className="px-2 py-1 text-xs bg-slate-800/50 rounded-full" style={{ color: '#BDDBD8' }} >{lab.topic}</span>
                     <span className="px-2 py-1 text-xs bg-slate-800/50 text-slate-300 rounded-full">
                       {lab.difficulty}
                     </span>
@@ -155,7 +155,7 @@ export function LabsSection() {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                       <Button
-                        className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white border-0 group/btn"
+                        className="bg-[#88BFCA] hover:bg-[#6faab7] text-white border-0 group/btn"
                         asChild
                       >
                         <a href={lab.colab} target="_blank" rel="noopener noreferrer">
@@ -172,7 +172,7 @@ export function LabsSection() {
                     </motion.div>
                     <Button
                       variant="outline"
-                      className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 bg-transparent"
+                      className="border-[#BDDBD8]/30 text-[#BDDBD8] hover:bg-[#BDDBD8]/10 bg-transparent"
                       asChild
                     >
                       <a href={lab.github} target="_blank" rel="noopener noreferrer">

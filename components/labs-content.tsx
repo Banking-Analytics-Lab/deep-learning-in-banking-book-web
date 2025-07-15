@@ -82,7 +82,7 @@ export function LabsContent() {
         >
           <h1 className="text-5xl lg:text-6xl font-light tracking-tight mb-8">
             <span className="text-slate-100">Interactive</span>
-            <span className="text-teal-400 ml-3">Labs</span>
+            <span className="ml-3" style={{ color: '#BDDBD8' }}>Labs</span>
           </h1>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Explore hands-on implementations that bring each chapter to life. Experience real-world banking AI through
@@ -109,16 +109,16 @@ export function LabsContent() {
               }}
               className="group"
             >
-              <Card className="bg-slate-900/30 backdrop-blur-sm border border-slate-700/50 hover:border-teal-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-teal-500/10 h-full">
+              <Card className="bg-slate-900/30 backdrop-blur-sm border border-slate-700/50 hover:border-[#BDDBD8]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[#BDDBD8]/10 h-full">
                 <CardContent className="p-8">
                   <div className="flex items-start justify-between mb-6">
                     <div>
-                      <div className="text-sm text-teal-400 font-medium mb-2">{lab.chapter}</div>
-                      <h3 className="text-xl font-semibold text-slate-100 group-hover:text-teal-300 transition-colors duration-300 leading-tight">
+                      <div className="text-sm font-medium mb-2" style={{ color: '#BDDBD8' }} >{lab.chapter}</div>
+                      <h3 className="text-xl font-semibold text-slate-100 group-hover:text-[#BDDBD8] transition-colors duration-300 leading-tight">
                         {lab.title}
                       </h3>
                     </div>
-                    <div className="text-teal-400 opacity-60 transition-transform duration-300 group-hover:rotate-90">
+                    <div className="text-[#BDDBD8] opacity-60 transition-transform duration-300 group-hover:rotate-90">
                       <Play className="h-5 w-5" />
                     </div>
                   </div>
@@ -127,7 +127,7 @@ export function LabsContent() {
 
                   <div className="flex flex-col sm:flex-row gap-3">
                     <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                      <Button className="bg-teal-600 hover:bg-teal-700 text-white border-0 flex-1" asChild>
+                      <Button className="bg-[#88BFCA] hover:bg-[#6faab7] text-white border-0 flex-1" asChild>
                         <a href={lab.colab} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="mr-2 h-4 w-4" />
                           Launch in Colab
@@ -136,7 +136,7 @@ export function LabsContent() {
                     </motion.div>
                     <Button
                       variant="outline"
-                      className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white bg-transparent"
+                      className="border-[#BDDBD8]/30 text-[#BDDBD8] hover:bg-[#BDDBD8]/10 bg-transparent"
                       asChild
                     >
                       <a href={lab.github} target="_blank" rel="noopener noreferrer">

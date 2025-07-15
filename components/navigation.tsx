@@ -21,22 +21,22 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <Link href="/" className="text-xl font-semibold tracking-tight">
             <span className="text-white">Deep Learning</span>
-            <span className="text-green ml-2">in Banking</span>
+            <span className="text-[#BDDBD8] ml-2">in Banking</span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-12">
-            <Link href="/" className="text-slate hover:text-green transition-colors duration-300 font-medium">
+            <Link href="/" className="text-slate hover:text-[#4B90A0] transition-colors duration-300 font-medium">
               Home
             </Link>
             <Link
               href="/authors"
-              className="text-slate hover:text-green transition-colors duration-300 font-medium"
+              className="text-slate hover:text-[#4B90A0] transition-colors duration-300 font-medium"
             >
               Authors
             </Link>
             <Link
               href="/labs"
-              className="text-slate hover:text-green transition-colors duration-300 font-medium"
+              className="text-slate hover:text-[#4B90A0] transition-colors duration-300 font-medium"
             >
               Labs
             </Link>
@@ -60,13 +60,13 @@ export function Navigation() {
             className="md:hidden mt-6 pb-6 border-t border-slate-800/50"
           >
             <div className="flex flex-col space-y-6 mt-6">
-              <Link href="/" className="text-slate hover:text-green transition-colors font-medium">
+              <Link href="/" className="text-slate hover:text-[#4B90A0] transition-colors font-medium">
                 Home
               </Link>
-              <Link href="/authors" className="text-slate hover:text-green transition-colors font-medium">
+              <Link href="/authors" className="text-slate hover:text-[#4B90A0] transition-colors font-medium">
                 Authors
               </Link>
-              <Link href="/labs" className="text-slate hover:text-green transition-colors font-medium">
+              <Link href="/labs" className="text-slate hover:text-[#4B90A0] transition-colors font-medium">
                 Labs
               </Link>
             </div>

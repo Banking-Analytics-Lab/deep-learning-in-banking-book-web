@@ -94,9 +94,11 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="space-y-4"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">Deep Learning in Banking</h1>
-              <h2 className="text-xl md:text-2xl font-semibold text-cyan-400 mb-2">
-                Leveraging Artificial Intelligence for Next-Generation Financial Services
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                Deep Learning <span style={{ color: '#BDDBD8' }}>in Banking</span>
+              </h1>
+              <h2 className="text-xl md:text-2xl font-semibold mb-2" style={{ color: '#88BFCA' }}>
+                Integrating Artificial Intelligence for Next-Generation Financial Services
               </h2>
               <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
                 Written by leading experts in AI and finance, it offers real-world case studies and actionable insights,
@@ -120,9 +122,9 @@ export function HeroSection() {
                   className="absolute left-0 top-0 w-full"
                   style={{ pointerEvents: endorsementIndex === idx ? "auto" : "none", position: "absolute" }}
                 >
-                  <div className="bg-slate-900/40 border-l-4 border-cyan-400 px-6 py-4 rounded-lg shadow">
+                  <div className="bg-slate-900/40 px-6 py-4 rounded-lg shadow" style={{ borderLeft: '4px solid #88BFCA' }}>
                     <p className="italic text-slate-200 text-base md:text-lg mb-2">“{endorsement.quote}”</p>
-                    <span className="block text-cyan-300 text-sm font-medium">{endorsement.author}</span>
+                    <span className="block text-cyan-300 text-sm font-medium" style={{ color: '#88BFCA' }}>{endorsement.author}</span>
                   </div>
                 </motion.div>
               ))}

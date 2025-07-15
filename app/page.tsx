@@ -61,15 +61,15 @@ function RiskAssessmentPipelineSnippet() {
     <div className="my-20 max-w-3xl mx-auto">
       {/* Centered Explore Labs Header */}
       <div className="flex flex-col items-center text-center mb-10">
-        <h2 className="text-3xl font-extrabold text-green tracking-tight mb-2 flex items-center gap-2">
-          <Terminal className="h-5 w-5 text-green" />
+        <h2 className="text-3xl font-extrabold text-white tracking-tight mb-2 flex items-center gap-2">
+          <Terminal className="h-5 w-5 text-white" />
           Explore Labs
         </h2>
         <p className="text-slate text-lg mb-5 max-w-xl">
           Dive deeper into hands-on AI labs and interactive code examples. Click below to discover more practical fintech experiments and learning resources.
         </p>
         <Link href="/labs" passHref legacyBehavior>
-          <a className="inline-block bg-gradient-to-r from-green to-slate hover:from-green/80 hover:to-slate/80 text-darknavy font-semibold px-8 py-3 rounded-lg shadow-lg transition-all duration-200">
+          <a className="inline-block bg-[#BDDBD8] hover:bg-[#a5b7b2] text-darknavy font-semibold px-8 py-3 rounded-lg shadow-lg transition-all duration-200">
             Go to Labs
           </a>
         </Link>

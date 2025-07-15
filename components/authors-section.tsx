@@ -50,7 +50,7 @@ export function AuthorsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-clip-text text-transparent" style={{ background: 'none', color: '#88BFCA' }}>
               Meet the Authors
             </span>
           </h2>
@@ -77,14 +77,14 @@ export function AuthorsSection() {
               }}
               className="group"
             >
-              <Card className="bg-slate-900/30 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/40 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/20 h-full">
+              <Card className="bg-slate-900/30 backdrop-blur-md border border-[#88BFCA]/20 hover:border-[#88BFCA]/40 transition-all duration-500 hover:shadow-2xl hover:shadow-[#88BFCA]/20 h-full">
                 <CardContent className="p-6 text-center">
                   <motion.div
                     className="relative mb-6"
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
                   >
-                    <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-green to-slate p-1">
+                    <div className="w-32 h-32 mx-auto rounded-full p-1" style={{ border: '3px solid #BDDBD8' }}>
                       <img
                         src={author.image || "/placeholder.svg"}
                         alt={author.name}
@@ -93,7 +93,7 @@ export function AuthorsSection() {
                       />
                     </div>
                     <motion.div
-                      className="absolute inset-0 rounded-full bg-cyan-400/20 blur-xl"
+                      className="absolute inset-0 rounded-full bg-[#88BFCA]/20 blur-xl"
                       animate={{
                         scale: [1, 1.2, 1],
                         opacity: [0.3, 0.6, 0.3],
@@ -107,7 +107,7 @@ export function AuthorsSection() {
                   </motion.div>
 
                   <motion.h3
-                    className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors duration-300"
+                    className="text-xl font-bold text-white mb-2 group-hover:text-[#88BFCA] transition-colors duration-300"
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                     transition={{ delay: index * 0.2 + 0.3 }}
@@ -116,7 +116,8 @@ export function AuthorsSection() {
                   </motion.h3>
 
                   <motion.p
-                    className="text-cyan-400 font-medium mb-1"
+                    className="font-medium mb-1"
+                    style={{ color: '#88BFCA' }}
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                     transition={{ delay: index * 0.2 + 0.4 }}
@@ -152,7 +153,7 @@ export function AuthorsSection() {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 bg-transparent"
+                        className="border-[#88BFCA] text-[#88BFCA] hover:bg-[#88BFCA] hover:text-white bg-transparent"
                         asChild
                       >
                         <a href={author.linkedin} target="_blank" rel="noopener noreferrer">
@@ -164,7 +165,7 @@ export function AuthorsSection() {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 bg-transparent"
+                        className="border-[#88BFCA] text-[#88BFCA] hover:bg-[#88BFCA] hover:text-white bg-transparent"
                         asChild
                       >
                         <a href={author.scholar} target="_blank" rel="noopener noreferrer">

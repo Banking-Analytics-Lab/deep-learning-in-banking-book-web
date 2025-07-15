@@ -52,7 +52,7 @@ export function AuthorsContent() {
         >
           <h1 className="text-5xl lg:text-6xl font-light tracking-tight mb-8">
             <span className="text-slate-100">Meet the</span>
-            <span className="text-teal-400 ml-3">Authors</span>
+            <span className="ml-3" style={{ color: '#88BFCA' }}>Authors</span>
           </h1>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
             Leading experts in machine learning and financial technology, bringing decades of combined research and
@@ -82,14 +82,14 @@ export function AuthorsContent() {
                 }}
                 className="group"
               >
-                <Card className="bg-slate-900/30 backdrop-blur-sm border border-slate-700/50 hover:border-teal-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-teal-500/10 h-full">
+                <Card className="bg-slate-900/30 backdrop-blur-sm border border-slate-700/50 hover:border-[#88BFCA]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[#88BFCA]/10 h-full">
                   <CardContent className="p-8 text-center">
                     <motion.div
                       className="relative mb-8"
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3, ease: "easeOut" }}
                     >
-                      <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-green to-slate p-1">
+                      <div className="w-32 h-32 mx-auto rounded-full p-1" style={{ border: '3px solid #BDDBD8' }}>
                         <img
                           src={author.image || "/placeholder.svg"}
                           alt={author.name}
@@ -97,14 +97,16 @@ export function AuthorsContent() {
                           style={{ objectFit: 'cover', width: '100%', height: '100%', maxWidth: '128px', maxHeight: '128px' }}
                         />
                       </div>
-                      <div className="absolute inset-0 rounded-full bg-teal-400/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute inset-0 rounded-full bg-[#88BFCA]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </motion.div>
 
-                    <h3 className="text-xl font-semibold text-slate-100 mb-2 group-hover:text-teal-300 transition-colors duration-300">
+                    <h3 className="text-xl font-semibold text-slate-100 mb-2 group-hover:text-[#88BFCA] transition-colors duration-300">
                       {author.name}
                     </h3>
 
-                    <p className="text-teal-400 font-medium mb-1">{author.title}</p>
+                    <p className="font-medium mb-1" style={{ color: '#88BFCA' }}>
+                      {author.title}
+                    </p>
 
                     <p className="text-sm text-slate-400 mb-6">{author.institution}</p>
 
@@ -112,7 +114,8 @@ export function AuthorsContent() {
                       {expanded ? author.bio : shortBio}
                       {author.bio.length > 180 && (
                         <button
-                          className="ml-2 text-green underline focus:outline-none"
+                          className="ml-2 underline focus:outline-none"
+                          style={{ color: '#88BFCA' }}
                           onClick={() => setExpanded((prev) => !prev)}
                         >
                           {expanded ? 'Read less' : 'Read more'}
@@ -125,7 +128,7 @@ export function AuthorsContent() {
                         <Button
                           size="sm"
                           variant="outline"
-                          className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white bg-transparent"
+                          className="border-[#88BFCA] text-[#88BFCA] hover:bg-[#88BFCA] hover:text-white bg-transparent"
                           asChild
                         >
                           <a href={author.linkedin} target="_blank" rel="noopener noreferrer">
@@ -137,7 +140,7 @@ export function AuthorsContent() {
                         <Button
                           size="sm"
                           variant="outline"
-                          className="border-slate-600 text-slate-300 hover:bg-slate-800 hover:text-white bg-transparent"
+                          className="border-[#88BFCA] text-[#88BFCA] hover:bg-[#88BFCA] hover:text-white bg-transparent"
                           asChild
                         >
                           <a href={author.scholar} target="_blank" rel="noopener noreferrer">

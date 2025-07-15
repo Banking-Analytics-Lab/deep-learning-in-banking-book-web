@@ -14,7 +14,7 @@ export function Footer() {
       <div className="container mx-auto px-4 text-center">
         <div className="mb-4">
           <h3 className="text-xl font-bold text-white mb-1">
-            Deep Learning <span className="text-teal-400">in Banking</span>
+            Deep Learning <span className="text-[#BDDBD8]">in Banking</span>
           </h3>
           <p className="text-sm">By Cristián Bravo, Sebastián Maldonado, and María Óskarsdóttir</p>
         </div>
@@ -23,7 +23,7 @@ export function Footer() {
             href="https://github.com/Banking-Analytics-Lab/DLinBankingBook"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-cyan-400 transition-colors"
+            className="hover:text-[#4B90A0] transition-colors"
           >
             Labs (GitHub)
           </Link>
@@ -31,7 +31,7 @@ export function Footer() {
             href="https://www.wiley.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-cyan-400 transition-colors"
+            className="hover:text-[#4B90A0] transition-colors"
           >
             Wiley
           </Link>

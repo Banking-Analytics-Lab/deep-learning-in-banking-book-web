@@ -23,7 +23,7 @@ export function LabsIntro() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="text-4xl lg:text-5xl font-bold mb-6"
           >
-            <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-400 via-[#BDDBD8] to-blue-400 bg-clip-text text-transparent">
               Interactive Learning Labs
             </span>
           </motion.h2>
@@ -43,7 +43,7 @@ export function LabsIntro() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-            className="mt-8 h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
+            className="mt-8 h-px bg-gradient-to-r from-transparent via-[#BDDBD8] to-transparent"
           />
         </motion.div>
       </div>
