@@ -101,7 +101,7 @@ export function HeroSection() {
                 Integrating Artificial Intelligence for Next-Generation Financial Services
               </h2>
               <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl">
-                Written by leading experts in AI and finance, it offers real-world case studies and actionable insights,
+                Structured for both academic and professional use, the book offers real-world case studies and actionable insights,
                 covering trust, regulation, fairness, and explainability.
               </p>
             </motion.div>
