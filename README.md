@@ -1,7 +1,5 @@
 # Deep Learning in Banking
 
-![Book Cover](public/book.png)
-
 **Leveraging Artificial Intelligence for Next-Generation Financial Services**
 
 By Cristián Bravo, Sebastián Maldonado, and María Óskarsdóttir
