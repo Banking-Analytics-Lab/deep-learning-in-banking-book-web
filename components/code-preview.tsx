@@ -3,7 +3,6 @@
 import { useEffect, useState, useRef } from "react"
 import { Card } from "@/components/ui/card"
 import { highlightCode } from "@/lib/utils"
-import "prismjs/themes/prism-tomorrow.css"
 
 const codeSnippets = [
   {
@@ -69,17 +68,12 @@ function TypewriterCode({ code, isVisible }: { code: string; isVisible: boolean 
     return () => clearInterval(timer)
   }, [code, currentIndex, isVisible])
 
-  // Apply syntax highlighting when code changes
+  // Apply syntax highlighting only when code is fully revealed
   useEffect(() => {
-    if (codeRef.current && displayedCode) {
-      highlightCode(displayedCode, "python", codeRef.current).catch(() => {
-        // Fallback: just set the text content
-        if (codeRef.current) {
-          codeRef.current.textContent = displayedCode
-        }
-      })
+    if (codeRef.current && displayedCode && displayedCode === code) {
+      highlightCode(displayedCode, "python", codeRef.current)
     }
-  }, [displayedCode])
+  }, [displayedCode, code])
 
   return (
     <pre className="text-sm font-mono leading-relaxed bg-slate-900/50 rounded p-4 overflow-x-auto">

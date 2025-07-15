@@ -11,7 +11,6 @@ import { Terminal } from "lucide-react"
 import { useRef, useEffect, useState } from "react"
 import { Card } from "@/components/ui/card"
 import React from "react"
-import "prismjs/themes/prism-tomorrow.css"
 import { BookRetailers } from "@/components/book-retailers"
 import { AboutBookSection } from "@/components/about-book"
 import { highlightCode } from "@/lib/utils"
@@ -22,7 +21,6 @@ function RiskAssessmentPipelineSnippet() {
   const [mounted, setMounted] = useState(false)
   const [displayedCode, setDisplayedCode] = useState("")
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [prismLoaded, setPrismLoaded] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -46,31 +44,17 @@ function RiskAssessmentPipelineSnippet() {
     }
   }, [mounted, currentIndex, codeSnippet])
 
-    useEffect(() => {
+  useEffect(() => {
     if (mounted && codeRef.current) {
-      // Load Prism.js and highlight code
-      highlightCode(displayedCode, "python", codeRef.current).then(() => {
-        setPrismLoaded(true)
-      }).catch(() => {
-        // Fallback: just set the text content
-        if (codeRef.current) {
-          codeRef.current.textContent = displayedCode
-        }
-      })
+      highlightCode(displayedCode, "python", codeRef.current)
     }
   }, [mounted, displayedCode])
 
   useEffect(() => {
-    if (mounted && prismLoaded && codeRef.current) {
-      // Re-highlight when Prism is loaded and code changes
-      highlightCode(displayedCode, "python", codeRef.current).catch(() => {
-        // Fallback: just set the text content
-        if (codeRef.current) {
-          codeRef.current.textContent = displayedCode
-        }
-      })
+    if (mounted && codeRef.current) {
+      highlightCode(displayedCode, "python", codeRef.current)
     }
-  }, [mounted, prismLoaded, displayedCode])
+  }, [mounted, displayedCode])
 
   if (!mounted) return null
   return (

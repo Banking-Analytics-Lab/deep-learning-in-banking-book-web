@@ -5,7 +5,6 @@ import { motion, useInView } from "framer-motion"
 import { Card } from "@/components/ui/card"
 import Link from "next/link"
 
-// Existing Animations (kept as is)
 function RiskChart() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   useEffect(() => {
@@ -124,8 +123,6 @@ function FraudMatrix() {
   return <canvas ref={canvasRef} className="w-full h-full opacity-80" />
 }
 
-// Refined Animations for the 7 Notebooks
-
 function CnnRiskViz() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   useEffect(() => {
@@ -211,7 +208,7 @@ function DeepLearningForecast() {
       ctx.lineWidth = 2
 
       // Historical data (solid line)
-      ctx.strokeStyle = "#10b981" // Green
+      ctx.strokeStyle = "#10b981" 
       ctx.beginPath()
       for (let x = 0; x < canvas.width * 0.6; x += 5) {
         const y = 100 + Math.sin((x + frame) * 0.03) * 20
@@ -221,7 +218,7 @@ function DeepLearningForecast() {
       ctx.stroke()
 
       // Forecasted data (dashed line)
-      ctx.strokeStyle = "#22d3ee" // Cyan
+      ctx.strokeStyle = "#22d3ee" 
       ctx.setLineDash([5, 5])
       ctx.beginPath()
       const lastX = canvas.width * 0.6 - 5
@@ -278,7 +275,7 @@ function NlpDocumentIntel() {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       // Draw document representations
-      ctx.fillStyle = "rgba(160, 174, 192, 0.2)" // Light gray for documents
+      ctx.fillStyle = "rgba(160, 174, 192, 0.2)"
       ctx.strokeStyle = "rgba(160, 174, 192, 0.5)"
       ctx.lineWidth = 1
       docRects.forEach((rect) => {
@@ -376,7 +373,7 @@ function GnnLoanRelationships() {
       for (let i = 0; i < nodes.length; i++) {
         const node = nodes[i]
         const pulse = Math.sin((frame + i * 20) * 0.05) * 2 + 5
-        ctx.fillStyle = "#22d3ee" // Cyan for nodes
+        ctx.fillStyle = "#22d3ee"
         ctx.beginPath()
         ctx.arc(node.x, node.y, pulse, 0, Math.PI * 2)
         ctx.fill()
@@ -408,8 +405,8 @@ function LlamaPromptEng() {
     canvas.height = 200
     let frame = 0
     const promptText = "Analyze financial reports for key insights."
-    const typingSpeed = 2 // characters per frame
-    const cursorBlinkSpeed = 30 // frames per blink cycle
+    const typingSpeed = 2 
+    const cursorBlinkSpeed = 30
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
@@ -422,21 +419,20 @@ function LlamaPromptEng() {
       const currentText = promptText.substring(0, typedLength)
 
       // Draw typed text
-      ctx.fillStyle = "#a0aec0" // Light gray for text
-      ctx.fillText(currentText, 20, 80) // Centered vertically, slightly left
+      ctx.fillStyle = "#a0aec0"
+      ctx.fillText(currentText, 20, 80)
 
       // Blinking cursor
       if (typedLength < promptText.length) {
         if (Math.floor(frame / cursorBlinkSpeed) % 2 === 0) {
           const textWidth = ctx.measureText(currentText).width
-          ctx.fillStyle = "#a0aec0" // Cursor color
-          ctx.fillRect(20 + textWidth, 80, 2, 16) // Draw cursor
+          ctx.fillStyle = "#a0aec0" 
+          ctx.fillRect(20 + textWidth, 80, 2, 16) 
         }
       } else {
         // Reset animation after a delay
         if (frame > promptText.length * typingSpeed + 100) {
-          // Wait 100 frames after typing
-          frame = 0 // Reset frame to restart animation
+          frame = 0
         }
       }
 

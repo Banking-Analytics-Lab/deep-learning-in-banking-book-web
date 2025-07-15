@@ -189,7 +189,7 @@ export function HeroSection() {
                     />
                     {/* Floating book image */}
                     <motion.img
-                      src="/book.png"
+                      src="/book2.png"
                       alt="Deep Learning in Banking Book Cover"
                       className="h-full object-contain drop-shadow-2xl rounded-xl relative z-10"
                       style={{ maxHeight: "100%", maxWidth: "100%" }}
