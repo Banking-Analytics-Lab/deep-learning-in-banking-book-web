@@ -84,7 +84,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="flex items-center gap-2 px-4 py-2 bg-yellow-400/20 rounded-full w-fit"
             >
-              <span className="text-sm font-semibold text-yellow-300">Available For PreOrder Now</span>
+              <span className="text-sm font-semibold text-yellow-300">Available For Preorder Now</span>
             </motion.div>
 
             {/* Main headline */}
