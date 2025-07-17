@@ -644,7 +644,7 @@ export function CodeSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-white bg-clip-text text-transparent">AI in Motion</span>
+            <span className="text-white bg-clip-text text-transparent">Deep Learning in Banking</span>
           </h2>
         </motion.div>
 
