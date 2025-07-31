@@ -18,13 +18,18 @@ export function HeroSection() {
       author:
         "Dhagash Mehta, Head of Applied AI Research, Blackrock. Editorial Board Member at the Journal of Financial Data Science.",
     },
+    {
+      quote:
+        "An essential resource for fintech innovators and banking leaders, this book underscores the importance of deep learning in financial technology, offering tangible implementation frameworks and crucial regulatory details from respected authorities.",
+      author: "Paul Edwards, Director of Risk, Wealthsimple",
+    },
   ]
 
   // Auto-rotate endorsements every 7 seconds
   React.useEffect(() => {
     const interval = setInterval(() => {
       setEndorsementIndex((i) => (i + 1) % endorsements.length)
-    }, 7000)
+    }, 8000)
     return () => clearInterval(interval)
   }, [])
 
