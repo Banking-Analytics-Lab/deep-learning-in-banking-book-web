@@ -9,11 +9,6 @@ export function HeroSection() {
   const endorsements = [
     {
       quote:
-        "A timely and outstanding contribution from three exceptional researchers, this book blends theoretical rigor with real-world applicability. With rich case studies and actionable insights, it’s an essential resource for navigating today’s data-driven banking environment.",
-      author: "Bart Baesens, Professor of AI in Business, KU Leuven",
-    },
-    {
-      quote:
         "Not just presenting models, but providing the critical framework for building trust in them. A must-read for anyone serious about managing next-generation risk and building intelligent financial systems.",
       author:
         "Dhagash Mehta, Head of Applied AI Research, Blackrock. Editorial Board Member at the Journal of Financial Data Science.",
