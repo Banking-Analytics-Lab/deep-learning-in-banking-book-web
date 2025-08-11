@@ -18,6 +18,12 @@ export function HeroSection() {
         "An essential resource for fintech innovators and banking leaders, this book underscores the importance of deep learning in financial technology, offering tangible implementation frameworks and crucial regulatory details from respected authorities.",
       author: "Paul Edwards, Director of Risk, Wealthsimple",
     },
+    {
+      quote:
+        "A comprehensive and timely guide that bridges advanced machine-learning methods with the realities of banking practice. Written by internationally recognised experts in data science, it combines technical rigour, regulatory insight, and practical case studies. This book offers a rare one-stop resource for deploying deep learning responsibly in financial services. Essential reading for data scientists, risk professionals, and academics shaping the future of AI in banking. And an excellent textbook for students preparing to enter the field.",
+      author:
+        "Professor Galina Andreeva, Director of Credit Research Centre, University of Edinburgh Business School",
+    },
   ]
 
   // Auto-rotate endorsements every 7 seconds
@@ -107,29 +113,31 @@ export function HeroSection() {
             </motion.div>
 
             {/* Endorsement carousel */}
-            <div className="relative min-h-[170px] max-w-xl mb-8 overflow-visible flex items-start">
-              {endorsements.map((endorsement, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={false}
-                  animate={
-                    endorsementIndex === idx ? { opacity: 1, y: 0, zIndex: 1 } : { opacity: 0, y: 20, zIndex: 0 }
-                  }
-                  transition={{
-                    opacity: { duration: 0.7, ease: "easeInOut" },
-                    y: { duration: 0.7, ease: "easeInOut" },
-                  }}
-                  className="absolute left-0 top-0 w-full"
-                  style={{ pointerEvents: endorsementIndex === idx ? "auto" : "none", position: "absolute" }}
-                >
-                  <div className="bg-slate-900/40 px-6 py-4 rounded-lg shadow" style={{ borderLeft: '4px solid #88BFCA' }}>
-                    <p className="italic text-slate-200 text-base md:text-lg mb-2">“{endorsement.quote}”</p>
-                    <span className="block text-cyan-300 text-sm font-medium" style={{ color: '#88BFCA' }}>{endorsement.author}</span>
-                  </div>
-                </motion.div>
-              ))}
+            <div className="relative max-w-xl mb-8 overflow-visible flex items-start">
+              {endorsements.map((endorsement, idx) =>
+                endorsementIndex === idx && (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    className="w-full"
+                  >
+                    <div
+                      className="bg-slate-900/40 px-6 py-4 rounded-lg shadow"
+                      style={{ borderLeft: '4px solid #88BFCA' }}
+                    >
+                      <p className="italic text-slate-200 text-base md:text-lg mb-2">“{endorsement.quote}”</p>
+                      <span className="block text-cyan-300 text-sm font-medium" style={{ color: '#88BFCA' }}>
+                        {endorsement.author}
+                      </span>
+                    </div>
+                  </motion.div>
+                )
+              )}
             </div>
-
+            
             {/* Why Buy bullet list */}
 
             {/* Retailer buttons section removed */}
