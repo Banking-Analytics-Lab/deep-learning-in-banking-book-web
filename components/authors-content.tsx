@@ -30,7 +30,7 @@ const authors = [
     title: "Lecturer and Associate Professor",
     institution: "University of Southampton / Reykjavik University",
     bio: `María Óskarsdóttir is a Lecturer at the School of Mathematical Sciences of the University of Southampton and an Associate Professor at the Department of Computer Science at Reykjavík University. She holds a Ph.D. in Business Analytics from the Faculty of Economics and Business at KU Leuven in Belgium. Her research is focused on the intersection of network science and machine learning, looking at practical applications of data science and analytics whereby she leverages advanced machine learning techniques, network science, and various sources of data with the goal of increasing the impact of the analytics process and facilitating better usage of data science for decision making in various domains, such as finance, learning, marketing, health care and sustainability. She has over 50 publications in high-impact journals and conferences in the domains of operations research, network science and information systems. She serves as editor at Machine Learning.` ,
-    image: "/author_images/MariaOskarsdottir.jpg",
+    image: "/author_images/MO_photo.jpg",
     linkedin: "https://www.linkedin.com/in/mariaoskarsdottir/",
     scholar: "https://scholar.google.com/citations?user=-R5x1_QAAAAJ&hl=en",
   },
