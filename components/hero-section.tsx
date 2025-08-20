@@ -24,6 +24,12 @@ export function HeroSection() {
       author:
         "Professor Galina Andreeva, Director of Credit Research Centre, University of Edinburgh Business School",
     },
+    {
+      quote:
+        "Deep Learning in Banking is a groundbreaking guide for the future of finance. The authors have crafted a visionary guide that redefines how artificial intelligence can—and should—be applied in financial services. With unmatched clarity, academic rigor, and practical insight, this work is a masterclass in responsible innovation.\n\nWhether you're a data scientist, banking executive, or regulator, this book is your essential companion for navigating the evolving landscape of financial AI. It doesn’t just explain deep learning—it equips you to use it ethically, effectively, and with real-world impact. Each chapter delivers not only deep conceptual understanding but also hands-on code implementations, making this book a true toolkit for the future.\n\nIf you're serious about staying ahead in financial risk and innovation, Deep Learning in Banking deserves a permanent place on your shelf—and in your strategic thinking.",
+      author:
+        "Matt Fabian, Director, Financial Services Research and Consulting, TransUnion",
+    },
   ]
 
   // Auto-rotate endorsements every 7 seconds
