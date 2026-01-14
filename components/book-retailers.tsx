@@ -15,7 +15,7 @@ export function BookRetailers() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-3xl md:text-4xl font-bold mb-8 text-white"
         >
-          Preorder Today!
+          Buy Now!
         </motion.h2>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
