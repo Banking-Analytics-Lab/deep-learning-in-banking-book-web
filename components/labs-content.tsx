@@ -7,17 +7,34 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, Play, Terminal } from "lucide-react"
 import Link from "next/link"
 
-const labs = [
+type Lab = {
+  chapter: string
+  title: string
+  description: string
+  colab: string
+  github: string
+  badge?: string
+  alternate?: { label: string; colab: string; github: string }
+}
+
+const labs: Lab[] = [
   {
     chapter: "Chapter 2",
-    title: "Visualizing Credit Risk with CNNs",
+    title: "Reading Neighborhoods from Above with CNNs",
+    badge: "New case",
     description:
-      "This hands-on lab explores how convolutional neural networks (CNNs) can be used to analyze LIDAR image data to predict loan delinquency by region. Readers will learn to build a custom image-based model using PyTorch and torchvision—bridging spatial data with financial insight.",
-    colab: "https://colab.research.google.com/github/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap2_Image_Processing.ipynb",
-    github: "https://github.com/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap2_Image_Processing.ipynb",
+      "Can a height map of a neighborhood tell how deprived it is? Using open LiDAR data for Greater London, this lab follows the chapter's algorithms step by step: it trains a CNN from scratch and fine-tunes a pretrained EfficientNet. It then tests whether the image adds to the structured data a bank already has, with a validation design that respects geography.",
+    colab: "https://colab.research.google.com/github/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap2_LiDAR_Deprivation_London.ipynb",
+    github: "https://github.com/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap2_LiDAR_Deprivation_London.ipynb",
+    alternate: {
+      label: "Original book case, corrected: LiDAR and loan delinquency in US areas",
+      colab: "https://colab.research.google.com/github/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap2_Image_Processing.ipynb",
+      github: "https://github.com/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap2_Image_Processing.ipynb",
+    },
   },
   {
     chapter: "Chapter 3",
+    badge: "Updated",
     title: "Forecasting Delinquencies with Deep Learning",
     description:
       "Dive into sequential modeling using LSTM and GRU architectures to forecast loan delinquency trends. This lab introduces key techniques for temporal prediction using real-world loan performance data.",
@@ -26,6 +43,7 @@ const labs = [
   },
   {
     chapter: "Chapter 4",
+    badge: "Updated",
     title: "NLP for Financial Document Intelligence",
     description:
       "Explore the power of Transformer models for analyzing financial text. Using the Hugging Face library, this lab walks through tokenization, fine-tuning, and evaluating pre-trained models on finance-specific language tasks.",
@@ -113,7 +131,14 @@ export function LabsContent() {
                 <CardContent className="p-8">
                   <div className="flex items-start justify-between mb-6">
                     <div>
-                      <div className="text-sm font-medium mb-2" style={{ color: '#BDDBD8' }} >{lab.chapter}</div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="text-sm font-medium" style={{ color: '#BDDBD8' }} >{lab.chapter}</div>
+                        {lab.badge && (
+                          <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-[#BDDBD8]/15 text-[#BDDBD8] border border-[#BDDBD8]/30">
+                            {lab.badge}
+                          </span>
+                        )}
+                      </div>
                       <h3 className="text-xl font-semibold text-slate-100 group-hover:text-[#BDDBD8] transition-colors duration-300 leading-tight">
                         {lab.title}
                       </h3>
@@ -145,6 +170,22 @@ export function LabsContent() {
                       </a>
                     </Button>
                   </div>
+
+                  {lab.alternate && (
+                    <div className="mt-6 pt-4 border-t border-slate-700/50 text-sm text-slate-400">
+                      <div className="mb-2">{lab.alternate.label}</div>
+                      <div className="flex gap-4">
+                        <a href={lab.alternate.colab} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#88BFCA] hover:text-[#BDDBD8] transition-colors">
+                          <ExternalLink className="mr-1 h-3 w-3" />
+                          Colab
+                        </a>
+                        <a href={lab.alternate.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#88BFCA] hover:text-[#BDDBD8] transition-colors">
+                          <Github className="mr-1 h-3 w-3" />
+                          GitHub
+                        </a>
+                      </div>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>
