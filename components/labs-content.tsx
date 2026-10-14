@@ -43,12 +43,17 @@ const labs: Lab[] = [
   },
   {
     chapter: "Chapter 4",
-    badge: "Updated",
-    title: "NLP for Financial Document Intelligence",
+    badge: "New lab",
+    title: "From DistilBERT to ModernBERT: Reading the Fed's Stance",
     description:
-      "Explore the power of Transformer models for analyzing financial text. Using the Hugging Face library, this lab walks through tokenization, fine-tuning, and evaluating pre-trained models on finance-specific language tasks.",
-    colab: "https://colab.research.google.com/github/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap4_Textual_Data.ipynb",
-    github: "https://github.com/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap4_Textual_Data.ipynb",
+      "Our new lab for 2026. It fine-tunes DistilBERT, as in the chapter, and ModernBERT, a modern encoder released at the end of 2024, to read whether Federal Reserve speeches from 1997 to 2024 are hawkish, dovish or neutral. It follows a current workflow: labels made with a language model and checked by people, models tested on years they never saw, and simple baselines next to every model.",
+    colab: "https://colab.research.google.com/github/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap4_Fed_Stance.ipynb",
+    github: "https://github.com/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap4_Fed_Stance.ipynb",
+    alternate: {
+      label: "Original lab: Fed speeches and the economic activity index",
+      colab: "https://colab.research.google.com/github/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap4_Textual_Data.ipynb",
+      github: "https://github.com/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap4_Textual_Data.ipynb",
+    },
   },
   {
     chapter: "Chapter 5",
