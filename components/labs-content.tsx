@@ -74,9 +74,9 @@ const labs: Lab[] = [
   {
     chapter: "Chapter 7",
     badge: "New lab",
-    title: "Payment Histories as a Second Modality",
+    title: "Payment Histories and the Loan Network",
     description:
-      "Our new lab for 2026. It treats a mortgage's application data and its 24-month payment history as two modalities, and fuses a GRU with gradient boosting in three ways: intermediate, late and residual fusion. The raw monthly records match a model built on hand-made features, with no feature crafting, and a placebo shows the signal is real. The lab closes with transactional foundation models, the next step of the same idea.",
+      "Our new lab for 2026. It treats a mortgage as three modalities: its application data, its 24-month payment history, and its neighbors in the network of loans that share a region, a seller or a servicer. A three-branch network fuses them, and the lab compares it with late and residual fusion on top of XGBoost. With no hand-made features, the raw modalities reach the level of a benchmark built on them, and the test data cannot tell the two apart. Two placebos, one with shuffled payments and one with reassigned groups, show that both signals are real. The lab closes with transactional foundation models, the next step of the same idea.",
     colab: "https://colab.research.google.com/github/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap7_Payment_Sequences.ipynb",
     github: "https://github.com/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap7_Payment_Sequences.ipynb",
     alternate: {
