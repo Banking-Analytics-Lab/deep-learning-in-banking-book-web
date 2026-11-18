@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use material from this website, please cite the book below."
+title: "deep-learning-in-banking-book-web"
+authors:
+  - family-names: "Bravo"
+    given-names: "Cristián"
+  - family-names: "Maldonado"
+    given-names: "Sebastián"
+  - family-names: "Óskarsdóttir"
+    given-names: "María"
+repository-code: "https://github.com/Banking-Analytics-Lab/deep-learning-in-banking-book-web"
+preferred-citation:
+  type: book
+  title: "Deep Learning in Banking: Integrating Artificial Intelligence for Next-Generation Financial Services"
+  year: 2026
+  month: 1
+  publisher:
+    name: "John Wiley & Sons"
+  isbn: "978-1-394-29537-1"
+  authors:
+    - family-names: "Bravo"
+      given-names: "Cristián"
+    - family-names: "Maldonado"
+      given-names: "Sebastián"
+    - family-names: "Óskarsdóttir"
+      given-names: "María"
