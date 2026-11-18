@@ -18,6 +18,10 @@ By Cristián Bravo, Sebastián Maldonado, and María Óskarsdóttir
 - **Framer Motion** - Animation library
 - **Lucide React** - Icon library
 
+## Credits
+
+Website developed by Noah Kostesku.
+
 ## License
 
 © 2025 Deep Learning in Banking. All rights reserved. 
