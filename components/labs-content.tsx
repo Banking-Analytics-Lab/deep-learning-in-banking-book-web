@@ -93,6 +93,15 @@ const labs: Lab[] = [
     colab: "https://colab.research.google.com/github/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap8_FairnessandExplainability.ipynb",
     github: "https://github.com/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Chap8_FairnessandExplainability.ipynb",
   },
+  {
+    chapter: "Extra lab",
+    badge: "Not in the book",
+    title: "Foundation Models for Credit: Tables and Transaction Histories",
+    description:
+      "Our extra lab for 2026, on a topic the book does not cover. It builds on the mortgages of the Chapter 3 lab and the fusion of the Chapter 7 lab. It pretrains a tiny tabular foundation model (NanoDPT) on synthetic tables, scores loans without fitting against XGBoost and the released TabDPT 1.3, pretrains a small PRAGMA-style encoder on the monthly loan histories, and combines the two. It closes with the check a model validator would run: how much the scores move when the context changes. It runs in about 1.5 hours on a Colab T4 GPU.",
+    colab: "https://colab.research.google.com/github/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Foundation_Models.ipynb",
+    github: "https://github.com/Banking-Analytics-Lab/DLinBankingBook/blob/main/Labs/TextBook_Lab_Foundation_Models.ipynb",
+  },
 ]
 
 export function LabsContent() {
